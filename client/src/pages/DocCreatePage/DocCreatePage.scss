@@ -1,0 +1,24 @@
+.docCreatePage {
+	width: 100%;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	&-innerBox {
+		width: 80%;
+		height: 80%;
+		display: flex;
+		flex-direction: column;
+		justify-content: center;
+		align-items: center;
+		&_createButton {
+			margin: calc(var(--index)) 0;
+		}
+	}
+}
+.styleSelect {
+	&_heading {
+		color: var(--font-color-main);
+		margin: calc(var(--index)) 0;
+	}
+}

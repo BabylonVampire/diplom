@@ -1,0 +1,42 @@
+.docEditingPage {
+	height: 100%;
+	width: 100%;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	&-buttonContainer {
+		display: flex;
+		flex-direction: row;
+		justify-content: center;
+		align-items: center;
+		& > * {
+			margin: calc(var(--index));
+		}
+	}
+	&-paragraphContainer {
+		width: 60%;
+		& > * {
+			margin: calc(var(--index)) 0;
+		}
+	}
+}
+
+.paragraph {
+	&-editing {
+		position: relative;
+		display: flex;
+		flex-direction: row;
+		gap: 8px;
+
+		&-inputBoxes {
+			width: 100%;
+			display: flex;
+			flex-direction: column;
+			gap: 8px;
+		}
+	}
+	&_heading {
+		color: var(--font-color-main);
+	}
+}

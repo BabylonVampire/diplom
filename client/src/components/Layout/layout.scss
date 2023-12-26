@@ -1,0 +1,13 @@
+.layout {
+	position: relative;
+	min-height: 100vh;
+	padding: calc(var(--index) * 2);
+	background-color: var(--color-main);
+	display: flex;
+	flex-direction: row;
+
+	&__childrenBox {
+		position: relative;
+		right: calc(var(--index) * -2);
+	}
+}

@@ -1,0 +1,22 @@
+:root {
+	--index: calc(1vh + 1vw);
+
+	--color-main: #122e52;
+	--color-secondary: #3069b3;
+
+	--font-color-main: #ffffff;
+	--font-family-main: fortuneC;
+}
+
+@font-face {
+	font-family: fortuneC;
+	src: url(./assets/fonts/FortuneC.ttf);
+}
+
+* {
+	margin: 0 auto;
+	padding: 0;
+	box-sizing: border-box;
+	font-family: var(--font-family-main);
+	/* color: var(--font-color-main); */
+}

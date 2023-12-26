@@ -1,0 +1,41 @@
+.authPage {
+	width: 100%;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+
+	&-innerBox {
+		display: flex;
+		flex-direction: column;
+		justify-content: center;
+		align-items: center;
+		gap: 10px;
+		color: #fff;
+	}
+	&__title {
+		color: #fff;
+		text-align: center;
+	}
+	&-loginRegisterButtons {
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		flex-direction: column;
+	}
+	&__or {
+		color: #fff;
+		font-size: 20px;
+		margin: 0 10px;
+	}
+}
+
+.loginForm {
+	padding: 40px;
+	border-radius: 10px;
+	background-color: #0b1e37;
+	box-shadow: 1px 1px 6px 0px #000;
+	display: flex;
+	flex-direction: column;
+	gap: 10px;
+}
