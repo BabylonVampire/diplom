@@ -2,8 +2,14 @@ import { AlignmentType, Document, Paragraph } from 'docx';
 import { IParagraph } from '../../../types/IParagraph';
 import { ITextStyle } from '../../../types/ITestStyle';
 import { saveDoc } from './saveDoc';
+import { UseDocs } from '../../../hooks/useDocs';
 
 export const createDoc = (paragraphs: IParagraph[], textStyle?: ITextStyle) => {
+	const { createDoc } = UseDocs();
+	createDoc({
+		title: paragraphs[0].heading,
+		content: JSON.stringify(paragraphs),
+	});
 	const resultDoc: Paragraph[] = [];
 	paragraphs.forEach((paragraph) => {
 		resultDoc.push(

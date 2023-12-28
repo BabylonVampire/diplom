@@ -27,6 +27,7 @@ export class AuthService {
       const hashedPassword = await this.hashData(authDto.password);
       const newUser = await this.userService.create({
         ...authDto,
+        role: 'STUDENT',
         password: hashedPassword,
       });
       if (newUser instanceof HttpException) {

@@ -21,6 +21,9 @@ export class UsersService {
       throw new HttpException(
         'Не удалось создать пользователя',
         HttpStatus.INTERNAL_SERVER_ERROR,
+        {
+          cause: error,
+        },
       );
     }
   }
@@ -90,10 +93,7 @@ export class UsersService {
       });
       return user;
     } catch (error) {
-      throw new HttpException(
-        'Ошибка при получении пользователя по email',
-        HttpStatus.INTERNAL_SERVER_ERROR,
-      );
+      return null;
     }
   }
 

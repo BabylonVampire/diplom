@@ -2,6 +2,9 @@ import { Column, DataType, Model, Table } from 'sequelize-typescript';
 import { v4 as uuidv4 } from 'uuid';
 
 interface UserCreationAttributes {
+  first_name: string;
+  last_name: string;
+  role: string;
   email: string;
   password: string;
 }
@@ -41,6 +44,12 @@ export class User extends Model<User, UserCreationAttributes> {
     allowNull: false,
   })
   password: string;
+
+  @Column({
+    type: DataType.STRING,
+    allowNull: false,
+  })
+  role: string;
 
   @Column({
     type: DataType.BOOLEAN,

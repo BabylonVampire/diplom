@@ -15,9 +15,13 @@ export class PapersService {
       const paper = await this.paperModel.create(createPaperDto);
       return paper;
     } catch (error) {
-      return new HttpException('Соси хуй!', HttpStatus.INTERNAL_SERVER_ERROR, {
-        cause: error,
-      });
+      return new HttpException(
+        'Не удалось создать документ!',
+        HttpStatus.INTERNAL_SERVER_ERROR,
+        {
+          cause: error,
+        },
+      );
     }
   }
 

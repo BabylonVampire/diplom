@@ -14,10 +14,14 @@ const RegisterPage = () => {
 	const { loading, isAuth } = useSelector((state: RootState) => state.auth);
 
 	const handleRegister = async ({
+		first_name,
+		last_name,
 		email,
 		password,
 		passwordConfirm,
 	}: {
+		first_name: string;
+		last_name: string;
 		email: string;
 		password: string;
 		passwordConfirm: string;
@@ -25,7 +29,14 @@ const RegisterPage = () => {
 		if (password !== passwordConfirm) {
 			setLocalError(true);
 		} else {
-			dispatch(register({ email: email, password: password }))
+			dispatch(
+				register({
+					first_name: first_name,
+					last_name: last_name,
+					email: email,
+					password: password,
+				})
+			)
 				.then(() => {
 					setError(null);
 					navigate('/');
@@ -54,6 +65,38 @@ const RegisterPage = () => {
 							initialValues={{ remember: true }}
 							onFinish={handleRegister}
 						>
+							<Form.Item
+								name="first_name"
+								rules={[
+									{
+										required: true,
+										message: 'Please input your name!',
+									},
+								]}
+							>
+								<Input
+									prefix={
+										<LockOutlined className="site-form-item-icon" />
+									}
+									placeholder="Name"
+								/>
+							</Form.Item>
+							<Form.Item
+								name="last_name"
+								rules={[
+									{
+										required: true,
+										message: 'Please input your surname!',
+									},
+								]}
+							>
+								<Input
+									prefix={
+										<LockOutlined className="site-form-item-icon" />
+									}
+									placeholder="Surname"
+								/>
+							</Form.Item>
 							<Form.Item
 								name="email"
 								rules={[
